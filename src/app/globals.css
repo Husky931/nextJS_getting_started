@@ -1,7 +1,18 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    @apply bg-primary text-ink font-sans;
-  }
+@theme {
+  --color-primary: #f5f3ef;
+  --color-surface: #ffffff;
+  --color-ink: #121212;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-accent: #1d4ed8;
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
