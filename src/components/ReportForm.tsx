@@ -65,7 +65,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Platform
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="platform"
             value={form.platform}
             onChange={handleChange}
@@ -76,7 +76,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Industry
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="industry"
             value={form.industry}
             onChange={handleChange}
@@ -87,7 +87,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Seller (company) name
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="seller_name"
             value={form.seller_name}
             onChange={handleChange}
@@ -98,7 +98,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Seller (company) URL
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="seller_url"
             value={form.seller_url}
             onChange={handleChange}
@@ -109,7 +109,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Product name
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="product_name"
             value={form.product_name}
             onChange={handleChange}
@@ -120,7 +120,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Product URL
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="product_url"
             value={form.product_url}
             onChange={handleChange}
@@ -131,7 +131,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Quantity
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="quantity"
             value={form.quantity}
             onChange={handleChange}
@@ -144,7 +144,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Total price
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="total_price"
             value={form.total_price}
             onChange={handleChange}
@@ -157,7 +157,7 @@ export function ReportForm() {
         <label className="flex w-full flex-col gap-1 text-sm sm:w-[48%]">
           Currency
           <input
-            className="rounded border border-border px-3 py-2"
+            className="rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
             name="currency"
             value={form.currency}
             onChange={handleChange}
@@ -169,7 +169,7 @@ export function ReportForm() {
       <label className="flex flex-col gap-1 text-sm">
         Details
         <textarea
-          className="min-h-[120px] rounded border border-border px-3 py-2"
+          className="min-h-[120px] rounded border border-border bg-surface px-3 py-2 text-ink placeholder:text-muted"
           name="details"
           value={form.details}
           onChange={handleChange}
@@ -178,7 +178,7 @@ export function ReportForm() {
         />
       </label>
       <button
-        className="w-full rounded bg-ink px-4 py-2 text-sm font-medium text-white transition hover:bg-black"
+        className="w-full rounded cursor-pointer bg-ink px-4 py-2 text-sm font-medium text-white transition hover:bg-black"
         type="submit"
         disabled={status === "loading"}
       >
