@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import { supabaseAdmin } from "@/lib/supabaseAdmin";
 import { ReportStatus } from "@/lib/reportTypes";
@@ -14,9 +14,10 @@ function isAuthorized(request: Request) {
 }
 
 export async function PATCH(
-  request: Request,
-  { params }: { params: { id: string } },
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
 ) {
+  const { id } = await params;
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
@@ -38,7 +39,7 @@ export async function PATCH(
   const { error } = await supabaseAdmin
     .from("reports")
     .update({ status: body.status, updated_at: new Date().toISOString() })
-    .eq("id", params.id);
+    .eq("id", id);
 
   if (error) {
     return NextResponse.json(
