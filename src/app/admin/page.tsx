@@ -31,7 +31,10 @@ export default function AdminPage() {
     setStatus("idle");
   };
 
-  const updateReport = async (id: string, nextStatus: "approved" | "rejected") => {
+  const updateReport = async (
+    id: string,
+    nextStatus: "approved" | "rejected"
+  ) => {
     const response = await fetch(`/api/admin/reports/${id}`, {
       method: "PATCH",
       headers: {
@@ -106,12 +109,15 @@ export default function AdminPage() {
                 className="flex flex-col gap-3 rounded border border-border bg-surface p-4"
               >
                 <div className="flex flex-col gap-1">
-                  <h2 className="text-lg font-semibold">{report.product_name}</h2>
+                  <h2 className="text-lg font-semibold">
+                    {report.product_name}
+                  </h2>
                   <p className="text-sm text-muted">
                     {report.seller_name} · {report.platform}
                   </p>
                   <p className="text-sm text-muted">
-                    {report.currency} {report.total_price} · Qty {report.quantity}
+                    {report.currency} {report.total_price} · Qty{" "}
+                    {report.quantity}
                   </p>
                 </div>
                 <p className="text-sm text-ink">{report.details}</p>
@@ -135,14 +141,14 @@ export default function AdminPage() {
                 </div>
                 <div className="flex gap-2">
                   <button
-                    className="rounded bg-success px-3 py-2 text-sm font-medium text-white"
+                    className="rounded bg-success cursor-pointer px-3 py-2 text-sm font-medium text-white"
                     type="button"
                     onClick={() => updateReport(report.id, "approved")}
                   >
                     Approve
                   </button>
                   <button
-                    className="rounded bg-danger px-3 py-2 text-sm font-medium text-white"
+                    className="rounded cursor-pointer bg-danger px-3 py-2 text-sm font-medium text-white"
                     type="button"
                     onClick={() => updateReport(report.id, "rejected")}
                   >
